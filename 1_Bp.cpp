@@ -365,7 +365,7 @@ int main() {
             //  goto exit;
         case 5:
             cout << "\n\t\t\t";
-            cout << "THANK YOU\n\n\n\n\n\n";
+            cout << "THANK YOU\n\n\n\n\n";
             exit(0);
     }
 }
