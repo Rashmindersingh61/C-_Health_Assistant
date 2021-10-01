@@ -1,6 +1,11 @@
+/*
+COMPLETED
+*/
 #include <iostream>
 #include <windows.h>
 #include <iomanip>
+#include <chrono>
+#include <thread>
 
 
 using namespace std;
@@ -23,19 +28,39 @@ public:
         SetConsoleTextAttribute(color, 15);
         if (sys <= 120 && dia <= 80) {
             cout << "\n\n\t\t\t";
-            cout << "YOUR BP IS IN NORMAL RANGE" << endl;
+            cout << "YOUR BP IS ";
+            SetConsoleTextAttribute(color, 2);
+            cout << "NORMAL RANGE";
+            SetConsoleTextAttribute(color, 15);
+            cout << endl;
         } else if (sys <= 129 && dia < 80) {
             cout << "\n\n\t\t\t";
-            cout << "YOUR BP IS ELEVATED" << endl;
-        } else if (sys <= 139 && dia <= 89) {
+            cout << "YOUR BP IS ";
+            SetConsoleTextAttribute(color, 6);
+            cout << "ELEVATED";
+            SetConsoleTextAttribute(color, 15);
+            cout << endl;
+        } else if (sys <= 139 || dia <= 89) {
             cout << "\n\n\t\t\t";
-            cout << "YOUR BP IS HIGH (HYPERTENSION STAGE 1)" << endl;
-        } else if (sys <= 179 && dia <= 119) {
+            cout << "YOUR BP IS ";
+            SetConsoleTextAttribute(color, 14);
+            cout << "HIGH (HYPERTENSION STAGE 1)";
+            SetConsoleTextAttribute(color, 15);
+            cout << endl;
+        } else if (sys <= 179 || dia <= 119) {
             cout << "\n\n\t\t\t";
-            cout << "YOUR BP IS HIGH (HYPERTENSION STAGE 2)" << endl;
+            cout << "YOUR BP IS ";
+            SetConsoleTextAttribute(color, 4);
+            cout << "HIGH (HYPERTENSION STAGE 2)";
+            SetConsoleTextAttribute(color, 15);
+            cout << endl;
         } else if (sys >= 180 && dia >= 120) {
             cout << "\n\n\t\t\t";
-            cout << "YOUR BP IS VERY HIGH" << endl;
+            cout << "YOUR BP IS ";
+            SetConsoleTextAttribute(color, 12);
+            cout << "VERY HIGH";
+            SetConsoleTextAttribute(color, 15);
+            cout << endl;
         }
     }
 
@@ -129,6 +154,7 @@ public:
                 "pressure comes down on its own.";
     }
 };
+
 
 
 int main() {
